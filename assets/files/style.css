@@ -8,6 +8,8 @@
     font-optical-sizing: auto;
     font-weight: 200;
     font-style: normal;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 #container-clock-and-search {
@@ -88,12 +90,6 @@
     border-color: #EC854E;
 }
 
-.search-icon-options {
-    width: 2vw;
-    height: 2vh;
-    align-self: center;
-}
-
 #search-options {
     border: 1px solid #000000;
 }
@@ -118,6 +114,17 @@ td {
     height: 2vh;
     align-self: center;
     border: 1px solid #000000;
+    border-radius: 70px;
+    padding: 5px;
+}
+
+
+.search-icon-options-selected {
+    width: 2vw;
+    height: 2vh;
+    align-self: center;
+    border: 1px solid #000000;
+    background-color: #EC854E;
     border-radius: 70px;
     padding: 5px;
 }
