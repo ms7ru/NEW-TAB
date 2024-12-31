@@ -1,4 +1,4 @@
-var selectedEngine = 'google';
+var selectedEngine = 'google'; //default search engine
 const searchEnginesIcons = {
   google: '<title>Google</title><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>',
   startpage: '<title>Startpage</title><path d="m16.885 14.254.04-.06a8.723 8.723 0 0 0 1.851-4.309c-1.334 0-2.648 0-3.982.04a4.901 4.901 0 0 1-4.758 3.696 4.948 4.948 0 0 1-4.56-3.044 89.632 89.632 0 0 0-3.941.514c1.035 3.697 4.46 6.405 8.501 6.405a8.76 8.76 0 0 0 3.743-.83l.06-.02.04.04 5.455 6.603c.378.454.916.711 1.513.711.458 0 .896-.158 1.234-.435.399-.336.657-.79.697-1.304.04-.514-.1-1.009-.438-1.424zM5.118 8.56c.1-2.59 2.27-4.685 4.918-4.685a4.911 4.911 0 0 1 4.898 4.389c1.314.02 2.608.04 3.922.099C18.616 3.717 14.754 0 10.036 0c-4.858 0-8.82 3.934-8.82 8.758v.178a86.7 86.7 0 0 1 3.902-.376z"/>',
@@ -16,6 +16,18 @@ const searchEngines = {
 
 // CONFIG ABOVE THIS
 //----------------------------------------------------------------------------------------------------------------------------
+const searchInputBar = document.getElementById('search-input');
+const searchBar = document.getElementById('Search-Bar');
+
+// Add event listener to input for focus and blur events
+searchInputBar.addEventListener('focus', () => {
+    searchBar.classList.add('focused');
+});
+
+searchInputBar.addEventListener('blur', () => {
+    searchBar.classList.remove('focused');
+});
+
 
 function ChangeSearchEngine(engine) {
   selectedEngine = engine;
@@ -24,48 +36,6 @@ function ChangeSearchEngine(engine) {
 
   document.getElementById('search-icon').innerHTML = searchEnginesIcons[engine];
 }
-
-
-  // Get the input element
-const searchInputBar = document.getElementById('search-input');
-
-// Function to handle the search operation
-function search(query) {
-  console.log('Searching for:', query);
-  // Add your search logic here
-}
-
-// Add an event listener for the 'focus' event
-searchInputBar.addEventListener('focus', function() {
-  // Add an event listener for the 'keydown' event
-  searchInputBar.addEventListener('keydown', function(event) {
-    // Check if the pressed key is Enter (key code 13)
-    if (event.keyCode === 13) {
-      // Prevent the default action to avoid form submission
-      event.preventDefault();
-      // Get the value from the input field
-      const query = searchInputBar.value;
-      // Call the search function with the input value
-      search(query);
-    }
-  });
-});
-
-// Add an event listener for the 'blur' event
-searchInputBar.addEventListener('blur', function() {
-  // Remove the 'keydown' event listener when the input loses focus
-  searchInputBar.removeEventListener('keydown', function(event) {
-    // Check if the pressed key is Enter (key code 13)
-    if (event.keyCode === 13) {
-      // Prevent the default action to avoid form submission
-      event.preventDefault();
-      // Get the value from the input field
-      const query = searchInputBar.value;
-      // Call the search function with the input value
-      search(query);
-    }
-  });
-});
 
 
 
