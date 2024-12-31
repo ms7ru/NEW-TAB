@@ -172,10 +172,10 @@
         width: 90vw;
     }
     
-    #search-icon, .search-icon-options, {
+    #search-icon, .search-icon-options {
         width: 4vw;
         height: 4vh;
-    }
+    }   
 }
 
 #lower-bar-of-shortcuts {
