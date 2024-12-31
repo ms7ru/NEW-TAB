@@ -24,6 +24,12 @@
     100% { transform: scale(1); }
 }
 
+/* New animation for icons */
+@keyframes rotateIn {
+    from { transform: rotate(-360deg); }
+    to { transform: rotate(0); }
+}
+
 #container-clock-and-search {
     display: flex;
     animation: fadeIn 0.8s ease-out;
@@ -48,6 +54,7 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4px);
     transition: all 0.3s ease;
+    animation: pulse 2s infinite;
 }
 
 #clock:hover {
@@ -89,6 +96,7 @@
     transition: all 0.3s ease;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(4px);
+    animation: fadeIn 0.8s ease-out;
 }
 
 #Search-Bar:hover {
@@ -102,6 +110,7 @@
     height: 2vh;
     align-self: center;
     transition: transform 0.3s ease;
+    animation: rotateIn 1s ease-out;
 }
 
 #search-input {
@@ -136,6 +145,7 @@
     cursor: pointer;
     transition: all 0.3s ease;
     background: rgba(255, 255, 255, 0.7);
+    animation: rotateIn 1s ease-out;
 }
 
 .search-icon-options:hover {
@@ -170,6 +180,7 @@
     padding: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
+    animation: rotateIn 1s ease-out;
 }
 
 .favs-icon:hover {
